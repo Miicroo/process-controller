@@ -10,6 +10,8 @@ To ease the workflow, Process Controller adds a customizable web GUI to handle a
 - [Q/A](#)
 
 ## Technical flow
+![alt tag](https://raw.githubusercontent.com/Miicroo/process-controller/master/process%20controller%20flow.png)
+
 
 ## How to set up the project
 
