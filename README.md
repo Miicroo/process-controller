@@ -11,7 +11,7 @@ To ease the workflow, Process Controller adds a customizable web GUI to handle a
 
 ## Technical flow
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Miicroo/process-controller/master/process%20controller%20flow.png" alt="Main flow"/>
+  <img src="https://raw.githubusercontent.com/Miicroo/process-controller/master/process%20controller%20flow.png" alt="Main flow"/><br />
   <i>Message flow in Process Controller</i>
 </p>
 
@@ -28,20 +28,20 @@ Note: The server is not multithreaded, thus will only one process be served at t
 ## How to set up the project
 
 ### Properties
-`webserver.port` specifies webserver port (default value=8000)
-`webserver.indexpage` specifies index page of webserver (default value=index.html)
-`exec.path` specifies path to executable (default value=C:/cygwin/bin/bash.exe)
+`webserver.port` specifies webserver port (default value=8000)  
+`webserver.indexpage` specifies index page of webserver (default value=index.html)  
+`exec.path` specifies path to executable (default value=C:/cygwin/bin/bash.exe)  
 
 ## Possible TODOs
 * Make the Java server multithreaded to handle more calls at once.
 * HTTPS
 
 ## Q/A
-Q: Can I use this as an asynchronous terminal editor?
+Q: Can I use this as an asynchronous terminal editor?  
 A: No, the server can only handle one process at the time.
 
-Q: Can I send input to a process after starting it?
+Q: Can I send input to a process after starting it?  
 A: Currently no.
 
-Q: Can I see output in real time from a process?
+Q: Can I see output in real time from a process?  
 A: Nope, HTTP does not support streaming responses.
