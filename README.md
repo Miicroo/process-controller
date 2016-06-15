@@ -23,7 +23,7 @@ When a REST call is received by the Java server, it looks up a correct RequestPa
 Additional RequestParsers are used to control processes, sending the desired parameters to a POJO. Any POJO can control a process using the ProcessController interface. The interface is currently
 only supporting synchronous calls to process. Thus, when a process is started the Java backend will wait for the process' exit code. ProcessController also returns the output of the program.
 
-Note: The server is not multithreaded, thus will only one process be served at the time. The server has no built-in security (running HTTP, no file access checks, etc...)
+**A few things to consider:** This project should be run on a (non-production) machine to control the state of the machine. The server is not multithreaded, thus will only one process be served at the time. The server has no built-in security (running HTTP, no file access checks, etc...). For more things see [possible TODOs](#possibletodos). 
 
 ## How to set up the project
 
@@ -39,7 +39,7 @@ Note: The server is not multithreaded, thus will only one process be served at t
 
 ## Q/A
 Q: Can I use this as an asynchronous terminal editor?  
-A: No, the server can only handle one process at the time. (See [Possible TODOs](#possibletodos))
+A: No, the server can only handle one process at the time. (See [possible TODOs](#possibletodos))
 
 Q: Can I send input to a process after starting it?  
 A: Nope.
