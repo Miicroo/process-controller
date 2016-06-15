@@ -27,6 +27,7 @@ only supporting synchronous calls to process. Thus, when a process is started th
 **A few things to consider:** This project should be run on a (non-production) machine to control the state of the machine. The server is not multithreaded, thus will only one process be served at the time. The server has no built-in security (HTTP instead of HTTPS, no file access checks, etc...). For more things see [possible TODOs](#possibletodos). 
 
 ## How to set up the project
+Clone the project to your desired directory. Create your desired RequestParser(s) to parse incoming HTTP requests, see package `demo.model.web.requestparser` for different types of parsers. Edit `model.web.RequestParserFactory` by connecting your newly created parsers to a regex matching their supported request URIs. In your RequestParsers, return the data that the REST should provide. This can be done by implementing a controller, there are multiple examples in `demo.model.controller`. Deploy the server by running  `Main.main()`. If needed, edit the [properties](#properties) in `system.properties`.
 
 ### Properties
 `webserver.port` specifies webserver port (default value=8000)  
