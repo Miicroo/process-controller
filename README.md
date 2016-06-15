@@ -52,4 +52,4 @@ Q: Can I see output in real time from a process?
 A: Nope, HTTP does not support streaming responses.
 
 Q: Why would I use this instead of a real terminal?  
-A: It is a (fairly) simple way to control processes, especially long-runnings commands that for instance start/stop/compiles some program. However, if you are more into terminals and feel that typing commands is sufficient, this project is completely unnecessary.
+A: It is a (fairly) simple way to control processes, especially long-runnings commands like "start/stop/compile some program". However, if you are more into terminals and feel that typing commands is sufficient, this project is completely unnecessary.
