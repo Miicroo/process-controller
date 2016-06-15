@@ -31,6 +31,7 @@ Note: The server is not multithreaded, thus will only one process be served at t
 `webserver.port` specifies webserver port (default value=8000)  
 `webserver.indexpage` specifies index page of webserver (default value=index.html)  
 `exec.path` specifies path to executable (default value=C:/cygwin/bin/bash.exe)  
+`system.encoding` specifies character encoding of text used in the system (default value=UTF-8)    
 
 ## Possible TODOs
 * Make the Java server multithreaded to handle more calls at once.
@@ -38,10 +39,13 @@ Note: The server is not multithreaded, thus will only one process be served at t
 
 ## Q/A
 Q: Can I use this as an asynchronous terminal editor?  
-A: No, the server can only handle one process at the time.
+A: No, the server can only handle one process at the time. (See [Possible TODOs](#possibletodos))
 
 Q: Can I send input to a process after starting it?  
-A: Currently no.
+A: Nope.
 
 Q: Can I see output in real time from a process?  
 A: Nope, HTTP does not support streaming responses.
+
+Q: Why would I use this instead of a real terminal?
+A: It is a (fairly) simple way to control processes, especially long-runnings commands that for instance start/stop/compiles some program. However, if you are more into terminals and feel that typing commands is sufficient, this project is completely unnecessary.
