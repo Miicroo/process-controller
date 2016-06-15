@@ -6,6 +6,7 @@ To ease the workflow, Process Controller adds a customizable web GUI to handle a
 - [Technical flow](#technicalflow)
 - [How to set up the project](#howtosetuptheproject)
 	- [Properties](#properties)
+- [Demo](#demo)
 - [Possible TODOs](#possibletodos)
 - [Q/A](#qa)
 
@@ -23,7 +24,7 @@ When a REST call is received by the Java server, it looks up a correct RequestPa
 Additional RequestParsers are used to control processes, sending the desired parameters to a POJO. Any POJO can control a process using the ProcessController interface. The interface is currently
 only supporting synchronous calls to process. Thus, when a process is started the Java backend will wait for the process' exit code. ProcessController also returns the output of the program.
 
-**A few things to consider:** This project should be run on a (non-production) machine to control the state of the machine. The server is not multithreaded, thus will only one process be served at the time. The server has no built-in security (running HTTP, no file access checks, etc...). For more things see [possible TODOs](#possibletodos). 
+**A few things to consider:** This project should be run on a (non-production) machine to control the state of the machine. The server is not multithreaded, thus will only one process be served at the time. The server has no built-in security (HTTP instead of HTTPS, no file access checks, etc...). For more things see [possible TODOs](#possibletodos). 
 
 ## How to set up the project
 
@@ -32,6 +33,9 @@ only supporting synchronous calls to process. Thus, when a process is started th
 `webserver.indexpage` specifies index page of webserver (default value=index.html)  
 `exec.path` specifies path to executable (default value=C:/cygwin/bin/bash.exe)  
 `system.encoding` specifies character encoding of text used in the system (default value=UTF-8)    
+
+## Demo
+
 
 ## Possible TODOs
 * Make the Java server multithreaded to handle more calls at once.
