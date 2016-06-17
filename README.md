@@ -24,7 +24,7 @@ When a REST call is received by the Java server, it looks up a correct RequestPa
 Additional RequestParsers are used to control processes, sending the desired parameters to a POJO. Any POJO can control a process using the ProcessController interface. The interface is currently
 only supporting synchronous calls to process. Thus, when a process is started the Java backend will wait for the process' exit code. ProcessController also returns the output of the program.
 
-**A few things to consider:** This project should be run on a (non-production) machine to control the state of the machine. The server is not multithreaded, thus will only one process be served at the time. The server has no built-in security (HTTP instead of HTTPS, no file access checks, etc...). For more things see [possible TODOs](#possibletodos). 
+**A few things to consider:** This project should be run on a (non-production) machine to control the state of the machine. The server has no built-in security (HTTP instead of HTTPS, no file access checks, etc...). For more things see [possible TODOs](#possibletodos). 
 
 ## How to set up the project
 Clone the project to your desired directory. Create your desired RequestParser(s) to parse incoming HTTP requests, see package `demo.model.web.requestparser` for different types of parsers. Edit `model.web.RequestParserFactory` by connecting your newly created parsers to a regex matching their supported request URIs. In your RequestParsers, return the data that the REST should provide. This can be done by implementing a controller, there are multiple examples in `demo.model.controller`. Edit the web GUI to call your REST API end points. If needed, edit the [properties](#properties) in `system.properties`.
@@ -35,13 +35,13 @@ Deploy the server by running  `Main.main()`.
 `webserver.port` specifies webserver port (default value=8000)  
 `webserver.indexpage` specifies index page of webserver (default value=index.html)  
 `exec.path` specifies path to executable (default value=C:/cygwin/bin/bash.exe)  
-`system.encoding` specifies character encoding of text used in the system (default value=UTF-8)    
+`system.encoding` specifies character encoding of text used in the system (default value=UTF-8)  
+`system.multithreaded` specifies whether requests should be handled in parallel (default value=true)
 
 ## Demo
 
 
 ## Possible TODOs
-* Make the Java server multithreaded to handle more calls at once.
 * HTTPS
 
 ## Q/A
