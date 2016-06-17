@@ -20,11 +20,15 @@ Process Controller's UI is an HTML web GUI with a logic layer written in JavaScr
 thus enabling long-running processes (it is in the nature of asynchronous calls to never time out).
 The web GUI is also hosted by the Java server to [avoid cross-domain problems](http://stackoverflow.com/questions/10752055/cross-origin-requests-are-only-supported-for-http-error-when-loading-a-local).
 
-When a REST call is received by the Java server, it looks up a correct RequestParser. By default there is a (non-secure) FileRequstParser which serves the GUI files to the browser.
-Additional RequestParsers are used to control processes, sending the desired parameters to a POJO. Any POJO can control a process using the ProcessController interface. The interface is currently
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Miicroo/process-controller/master/process%20controller%20internal%20flow.png" alt="Internal flow"/><br />
+  <i>Internal HTTP request flow in Process Controller</i>
+</p>
+When a REST call is received by the Java server, it looks up a correct RequestParser. By default there is a (non-secure) FileRequstParser which serves the GUI files to the browser. Additional RequestParsers are used to control processes by sending the desired parameters to a POJO. Any POJO can control a process using the ProcessController interface. The interface is currently
 only supporting synchronous calls to process. Thus, when a process is started the Java backend will wait for the process' exit code. ProcessController also returns the output of the program.
 
-**A few things to consider:** This project should be run on a (non-production) machine to control the state of the machine. The server has no built-in security (HTTP instead of HTTPS, no file access checks, etc...). For more things see [possible TODOs](#possibletodos). 
+**A few things to consider:** This project should be run on a (non-production) machine to control the state of the machine. The server has no built-in security (HTTP instead of HTTPS, no file access checks, etc...). For more things see [possible TODOs](#possibletodos).
+
 
 ## How to set up the project
 Clone the project to your desired directory. Create your desired RequestParser(s) to parse incoming HTTP requests, see package `demo.model.web.requestparser` for different types of parsers. Edit `model.web.RequestParserFactory` by connecting your newly created parsers to a regex matching their supported request URIs. In your RequestParsers, return the data that the REST should provide. This can be done by implementing a controller, there are multiple examples in `demo.model.controller`. Edit the web GUI to call your REST API end points. If needed, edit the [properties](#properties) in `system.properties`.
