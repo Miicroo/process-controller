@@ -21,7 +21,7 @@ thus enabling long-running processes (it is in the nature of asynchronous calls 
 The web GUI is also hosted by the Java server to [avoid cross-domain problems](http://stackoverflow.com/questions/10752055/cross-origin-requests-are-only-supported-for-http-error-when-loading-a-local).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Miicroo/process-controller/master/process%20controller%20internal%20flow.png" alt="Internal flow"/><br />
+  <img src="https://raw.githubusercontent.com/Miicroo/process-controller/master/process%20controller%20internal%20server%20flow.png" alt="Internal flow"/><br />
   <i>Internal HTTP request flow in Process Controller</i>
 </p>
 When a REST call is received by the Java server, it looks up a correct RequestParser. By default there is a (non-secure) FileRequstParser which serves the GUI files to the browser. Additional RequestParsers are used to control processes by sending the desired parameters to a POJO. Any POJO can control a process using the ProcessController interface. The interface is currently
