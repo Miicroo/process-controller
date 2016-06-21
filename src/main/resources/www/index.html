@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head profile="http://www.w3.org/2005/10/profile">
+        <meta charset="utf-8">
+        <title>Process Controller UI</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" href="style/style.css" />
+        <script type="text/javascript" src="scripts/core/definitions.js"></script>
+        <script type="text/javascript" src="scripts/core/notificationmanager.js"></script>
+        <script type="text/javascript" src="scripts/core/uicontrols.js"></script>
+        <script type="text/javascript" src="scripts/core/backend.js"></script>
+
+        <script type="text/javascript" src="scripts/demo/sysinfoui.js"></script>
+        <script type="text/javascript" src="scripts/demo/meminfoui.js"></script>
+        <script type="text/javascript" src="scripts/demo/lsui.js"></script>
+
+        <script type="text/javascript" src="scripts/demo/sysinfocontroller.js"></script>
+        <script type="text/javascript" src="scripts/demo/meminfocontroller.js"></script>
+        <script type="text/javascript" src="scripts/demo/lscontroller.js"></script>
+    </head>
+    <body>
+        <div id="content" class="center">
+            <center>
+                <h1>Process Controller UI</h1>
+            </center>
+            <h2>System information</h2>
+            <img src="images/blue/restart.png" onclick="sysInfoController.updateSysInfo();" alt="Update system info" class="clickable right"/>
+            <div id="sysInfoDisplay">
+
+            </div>
+            <h2>Memory</h2>
+            <img src="images/blue/restart.png" onclick="memInfoController.updateMemInfo();" alt="Update memory info" class="clickable right"/>
+            <div id="memInfoDisplay">
+
+            </div>
+            <h2>ls</h2>
+            <input type="text" name="lsInput" id="lsInput" value = "." />
+            <button onclick="lsController.getDirContent(document.getElementById('lsInput').value);">Run ls</button>
+            <div id="lsInfoDisplay">
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            sysInfoController.updateSysInfo();
+            memInfoController.updateMemInfo();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+body{
+    font-family:"Roboto","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    background-color: #eee;
+    color: #000000;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family:"Roboto","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-weight:700;
+    font-style:normal;
+    text-rendering:optimizeLegibility;
+}
+
+#content{
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.center {
+    margin: auto;
+    width: 75%;
+    padding: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.link {
+    color: #0000FF;
+    text-decoration: underline;
+}
+
+.disabled {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+}
+
+.tableHeader {
+    font-weight: bold;
+}
